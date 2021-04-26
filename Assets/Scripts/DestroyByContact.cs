@@ -38,11 +38,15 @@ public class DestroyByContact : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
            
-            collision.GetComponent<health>().TakeDamage(10);
+            collision.GetComponent<health>().TakeDamage();
             OnDeath();
             StartCoroutine(playDeathByPlayer());
-            
-            if(collision.GetComponent<health>().getCurrentHealth()<=0)
+            if (localControl.armorText.gameObject.activeSelf)
+            {
+                localControl.armorText.gameObject.SetActive(false);
+            }
+
+            if (collision.GetComponent<health>().getCurrentHealth()<=0)
             {
                 localControl.GameOver();
             }
@@ -50,30 +54,32 @@ public class DestroyByContact : MonoBehaviour
 
         if (collision.CompareTag("Bolt"))
         {
+            Destroy(collision.gameObject);
             OnDeath();
-            StartCoroutine(playDeathBolt(collision));
+           
+            StartCoroutine(playDeathBolt());
+
         }    
     }
 
     private void OnDeath()
     {
         GetComponent<mover>().setSpeed(0);
-
+        GetComponent<CapsuleCollider2D>().enabled = false;
         // Set the flag so that this function is only called once.
         localControl.AddScore(10);
         anim.SetBool("isDead", true);
-
-        Debug.Log(anim.GetBool("isDead"));
+       
         // Play the tank explosion sound effect.
         // m_ExplosionAudio.Play();
     }
 
-    IEnumerator playDeathBolt(Collider2D other)
+    IEnumerator playDeathBolt()
     {
         yield return new WaitForSeconds(0.3f);
         
         Destroy(gameObject);
-        Destroy(other.gameObject);
+        
 
     }
 

@@ -16,6 +16,12 @@ public class health : MonoBehaviour
     private float m_CurrentHealth;                      // How much health the tank currently has.
     private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
     private Animator D_anim;
+    private bool armored;
+
+    public void setArmor(bool armor)
+    {
+        armored = armor;
+    }
    
 
     public float getCurrentHealth()
@@ -52,22 +58,27 @@ public class health : MonoBehaviour
     }
 
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount = 10)
     {
-        // Reduce current health by the amount of damage done.
-        m_CurrentHealth -= amount;
-
-        // Change the UI elements appropriately.
-        SetHealthUI();
-
-        // If the current health is at or below zero and it has not yet been registered, call OnDeath.
-        if (m_CurrentHealth <= 0f && !m_Dead)
+        if (!armored)
         {
-            OnDeath();
+            // Reduce current health by the amount of damage done.
+            m_CurrentHealth -= amount;
+
+            // Change the UI elements appropriately.
+            SetHealthUI();
+
+            // If the current health is at or below zero and it has not yet been registered, call OnDeath.
+            if (m_CurrentHealth <= 0f && !m_Dead)
+            {
+                OnDeath();
+            }
         }
+        else
+            armored = false;
     }
 
-    public void healDamage(float amount)
+    public void healDamage(float amount = 10)
     {
         m_CurrentHealth += amount;
 
@@ -88,7 +99,7 @@ public class health : MonoBehaviour
     private void OnDeath()
     {
         // Set the flag so that this function is only called once.
-        GetComponent<PlayerController>().enabled = false;
+        GetComponent<PlayerController>().speed = 0;
         m_Dead = true;
         Debug.Log(m_Dead);
         m_Slider.gameObject.SetActive(false);

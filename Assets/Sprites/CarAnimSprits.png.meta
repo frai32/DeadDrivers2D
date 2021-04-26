@@ -86,12 +86,12 @@ TextureImporter:
       name: CarAnimSprits_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 10
         y: 0
         width: 64
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -106,12 +106,12 @@ TextureImporter:
       name: CarAnimSprits_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 74
         y: 0
         width: 62
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,12 +126,12 @@ TextureImporter:
       name: CarAnimSprits_2
       rect:
         serializedVersion: 2
-        x: 126
+        x: 136
         y: 0
-        width: 62
+        width: 65
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,12 +146,12 @@ TextureImporter:
       name: CarAnimSprits_3
       rect:
         serializedVersion: 2
-        x: 188
+        x: 201
         y: 0
         width: 62
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,12 +166,12 @@ TextureImporter:
       name: CarAnimSprits_4
       rect:
         serializedVersion: 2
-        x: 250
+        x: 263
         y: 0
-        width: 62
+        width: 65
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,12 +186,12 @@ TextureImporter:
       name: CarAnimSprits_5
       rect:
         serializedVersion: 2
-        x: 312
+        x: 328
         y: 0
         width: 62
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: CarAnimSprits_6
       rect:
         serializedVersion: 2
-        x: 374
+        x: 390
         y: 0
-        width: 62
+        width: 65
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,12 +226,12 @@ TextureImporter:
       name: CarAnimSprits_7
       rect:
         serializedVersion: 2
-        x: 436
+        x: 455
         y: 0
         width: 62
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: CarAnimSprits_8
       rect:
         serializedVersion: 2
-        x: 498
+        x: 517
         y: 0
-        width: 62
+        width: 66
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,12 +266,12 @@ TextureImporter:
       name: CarAnimSprits_9
       rect:
         serializedVersion: 2
-        x: 560
+        x: 583
         y: 0
-        width: 64
+        width: 61
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

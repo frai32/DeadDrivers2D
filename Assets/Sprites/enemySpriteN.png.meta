@@ -86,12 +86,12 @@ TextureImporter:
       name: enemySpriteN_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
         width: 63
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -106,12 +106,12 @@ TextureImporter:
       name: enemySpriteN_1
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 0
-        width: 62
+        width: 64
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,12 +126,12 @@ TextureImporter:
       name: enemySpriteN_2
       rect:
         serializedVersion: 2
-        x: 125
+        x: 128
         y: 0
         width: 62
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,12 +146,12 @@ TextureImporter:
       name: enemySpriteN_3
       rect:
         serializedVersion: 2
-        x: 187
+        x: 190
         y: 0
         width: 62
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,12 +166,12 @@ TextureImporter:
       name: enemySpriteN_4
       rect:
         serializedVersion: 2
-        x: 249
+        x: 252
         y: 0
-        width: 62
+        width: 65
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,12 +186,12 @@ TextureImporter:
       name: enemySpriteN_5
       rect:
         serializedVersion: 2
-        x: 311
+        x: 317
         y: 0
         width: 62
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: enemySpriteN_6
       rect:
         serializedVersion: 2
-        x: 373
+        x: 379
         y: 0
-        width: 62
+        width: 65
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,12 +226,12 @@ TextureImporter:
       name: enemySpriteN_7
       rect:
         serializedVersion: 2
-        x: 435
+        x: 444
         y: 0
         width: 62
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: enemySpriteN_8
       rect:
         serializedVersion: 2
-        x: 497
+        x: 506
         y: 0
-        width: 62
+        width: 67
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,12 +266,12 @@ TextureImporter:
       name: enemySpriteN_9
       rect:
         serializedVersion: 2
-        x: 559
+        x: 573
         y: 0
         width: 62
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

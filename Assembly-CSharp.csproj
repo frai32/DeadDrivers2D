@@ -52,9 +52,6 @@
     <UnityVersion>2018.4.33f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2018.4.33f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -63,34 +60,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\healPlayer.cs" />
+    <Compile Include="Assets\Scripts\BackGround\BG.cs" />
+    <Compile Include="Assets\Scripts\bustrers\Buster.cs" />
+    <Compile Include="Assets\Scripts\bustrers\doubleShots.cs" />
+    <Compile Include="Assets\Scripts\bustrers\healPlayer.cs" />
+    <Compile Include="Assets\Scripts\bustrers\setArmor.cs" />
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\mover.cs" />
     <Compile Include="Assets\Scripts\Player\health.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerShooter.cs" />
     <Compile Include="Assets\Scripts\Player\UiDirectionControl.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>H:/DeadDrivers2D/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>H:/DeadDrivers2D/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>H:/DeadDrivers2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>H:/DeadDrivers2D/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>H:/DeadDrivers2D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>H:/DeadDrivers2D/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>H:/DeadDrivers2D/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.33f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -294,7 +296,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.33f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>H:/DeadDrivers2D/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.33f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
