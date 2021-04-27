@@ -32,10 +32,8 @@ public class health : MonoBehaviour
     private void Awake()
     {
         D_anim = GetComponentInChildren<Animator>();
-        print(D_anim.name); 
-
         // Get a reference to the audio source on the instantiated prefab.
-        //m_ExplosionAudio = m_ExplosionParticles.GetComponent<AudioSource>();
+          m_ExplosionAudio = GetComponent<AudioSource>();
 
         // Disable the prefab so it can be activated when it's required.
         //m_ExplosionParticles.gameObject.SetActive(false);
@@ -100,6 +98,7 @@ public class health : MonoBehaviour
     {
         // Set the flag so that this function is only called once.
         GetComponent<PlayerController>().speed = 0;
+
         m_Dead = true;
         Debug.Log(m_Dead);
         m_Slider.gameObject.SetActive(false);
@@ -109,7 +108,7 @@ public class health : MonoBehaviour
     
 
         // Play the tank explosion sound effect.
-        // m_ExplosionAudio.Play();
+         m_ExplosionAudio.Play();
 
         // Turn the tank off.
         StartCoroutine(playDeathAnimation());

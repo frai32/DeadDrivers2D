@@ -2,22 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class setArmor : Buster
+public class setArmor : MonoBehaviour
 {
-   
 
+    private AudioSource m_ExplosionAudio;
     private void Start()
     {
-        checkGameControll();
+        m_ExplosionAudio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            m_ExplosionAudio.Play();
            collision.GetComponent<health>().setArmor(true);
-            getLocalControl().armorText.gameObject.SetActive(true);
-            Destroy(gameObject);
+            GameObject.FindGameObjectWithTag("GameController").gameObject.GetComponent<GameController>().armorText.gameObject.SetActive(true);
+
+            Destroy(gameObject, 0.1f);
         }
     }
 }

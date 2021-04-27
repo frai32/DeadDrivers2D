@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class doubleShots : Buster
-{ 
-
+public class doubleShots : MonoBehaviour
+{
+    private AudioSource m_ExplosionAudio;
     private void Start()
     {
-        checkGameControll();
+        m_ExplosionAudio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            m_ExplosionAudio.Play();
             collision.GetComponent<PlayerShooter>().setHaveBuster(true);
-            getLocalControl().doubleText.gameObject.SetActive(true);
-            Destroy(gameObject);
+            GameObject.FindGameObjectWithTag("GameController").gameObject.GetComponent<GameController>().doubleText.gameObject.SetActive(true);
+            Destroy(gameObject, 0.1f);
         }
     }
 }

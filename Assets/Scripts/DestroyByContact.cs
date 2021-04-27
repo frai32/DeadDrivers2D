@@ -5,6 +5,8 @@ using UnityEngine;
 public class DestroyByContact : MonoBehaviour
 {
     GameController localControl;
+    private AudioSource m_ExplosionAudio;
+
     Animator anim;
     public int scoreValue;
 
@@ -13,11 +15,11 @@ public class DestroyByContact : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+
+        m_ExplosionAudio = GetComponent<AudioSource>();
     }
     private void Start()
     {
-      
-
         GameObject gameControll = GameObject.FindGameObjectWithTag("GameController");
         if(gameControll != null)
         {
@@ -37,16 +39,10 @@ public class DestroyByContact : MonoBehaviour
 
         if(collision.CompareTag("Player"))
         {
-           
             collision.GetComponent<health>().TakeDamage();
             OnDeath();
-            StartCoroutine(playDeathByPlayer());
-            if (localControl.armorText.gameObject.activeSelf)
-            {
-                localControl.armorText.gameObject.SetActive(false);
-            }
-
-            if (collision.GetComponent<health>().getCurrentHealth()<=0)
+            StartCoroutine(playDeath());
+            if (collision.GetComponent<health>().getCurrentHealth() <= 0)
             {
                 localControl.GameOver();
             }
@@ -57,36 +53,33 @@ public class DestroyByContact : MonoBehaviour
             Destroy(collision.gameObject);
             OnDeath();
            
-            StartCoroutine(playDeathBolt());
-
+            StartCoroutine(playDeath());
         }    
     }
 
+
     private void OnDeath()
     {
-        GetComponent<mover>().setSpeed(0);
         GetComponent<CapsuleCollider2D>().enabled = false;
         // Set the flag so that this function is only called once.
         localControl.AddScore(10);
         anim.SetBool("isDead", true);
-       
+        if (localControl.armorText.gameObject.activeSelf)
+        {
+            localControl.armorText.gameObject.SetActive(false);
+        }
+
+        
+
         // Play the tank explosion sound effect.
-        // m_ExplosionAudio.Play();
+        m_ExplosionAudio.Play();
     }
 
-    IEnumerator playDeathBolt()
+    IEnumerator playDeath()
     {
         yield return new WaitForSeconds(0.3f);
         
-        Destroy(gameObject);
-        
-
+        Destroy(gameObject);       
     }
 
-    IEnumerator playDeathByPlayer()
-    {
-        yield return new WaitForSeconds(0.3f);
-
-        Destroy(gameObject);
-    }
 }

@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class healPlayer : Buster
+public class healPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private AudioSource m_ExplosionAudio;
+    private void Start()
     {
-        
+        m_ExplosionAudio = GetComponent<AudioSource>();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -20,8 +19,9 @@ public class healPlayer : Buster
     {
         if(collision.CompareTag("Player"))
         {
-            collision.GetComponent<health>().healDamage();
-            Destroy(gameObject);
+            m_ExplosionAudio.Play();
+            collision.GetComponent<health>().healDamage(50);
+            Destroy(gameObject, 0.1f);
         }
     }
 }

@@ -61,18 +61,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BackGround\BG.cs" />
-    <Compile Include="Assets\Scripts\bustrers\Buster.cs" />
+    <Compile Include="Assets\Scripts\blinkScript.cs" />
     <Compile Include="Assets\Scripts\bustrers\doubleShots.cs" />
     <Compile Include="Assets\Scripts\bustrers\healPlayer.cs" />
     <Compile Include="Assets\Scripts\bustrers\setArmor.cs" />
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
+    <Compile Include="Assets\Scripts\Enemy\enemyBullet.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyReactions.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyShooter.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\mover.cs" />
     <Compile Include="Assets\Scripts\Player\health.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShooter.cs" />
     <Compile Include="Assets\Scripts\Player\UiDirectionControl.cs" />
+    <Compile Include="Assets\Scripts\Ui\blinkText.cs" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>

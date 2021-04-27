@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     {
         gameOver = false;
         restart = false;
-        RestartText.text = "";
+        
         gameOverText.text = "";
         score = 0;
         updateScore();
@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         gameOverText.text = "Game Over!";
-        RestartText.text = "Press 'R' for Restart";
+        RestartText.gameObject.SetActive(true);
         restart = true;
         gameOver = true;
     }
@@ -70,6 +70,7 @@ public class GameController : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.R))
             {
+                
                 Application.LoadLevel(Application.loadedLevel);
             }
         }

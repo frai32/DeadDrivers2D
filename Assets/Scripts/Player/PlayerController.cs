@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         moving();
         
-        //playerRig.rotation = Quaternion.Euler;
+        //playerRig.rotation = Quaternion.Euler(0,0,playerRig.velocity.x * -tilt);
 
         playerRig.position = new Vector2(
           Mathf.Clamp(playerRig.position.x, boundary.xMin, boundary.xMax),
