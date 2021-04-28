@@ -9,11 +9,12 @@ public class blinkText : MonoBehaviour
     bool isActive = true;
     string textOfString;
 
+
     private void Awake()
     {
         blinkingText = GetComponent<Text>();
         textOfString = blinkingText.text;
-        
+      
         StartCoroutine(blinking());
     }
     // Start is called before the first frame update

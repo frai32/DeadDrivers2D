@@ -7,6 +7,7 @@ public class EnemyShooter : MonoBehaviour
     public float speed;
     public Transform player;
     public GameObject bullet;
+    public GameObject spawn;
 
     private float TimeBTWShots;
     public float startTimeBTWShots;
@@ -27,21 +28,24 @@ public class EnemyShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (TimeBTWShots <=0)
-        {
-         var direction = transform.position - player.transform.position;
-            //direction.x = 0;
-            //direction.z = direction.y;
-            //direction.y = 0;// тут указать 0 для той оси, которую не надо изменять*/
-            //Instantiate(bullet, transform.position, bullet.transform.rotation);
 
-          Instantiate(bullet, transform.position, Quaternion.LookRotation((direction).normalized));
-            TimeBTWShots = startTimeBTWShots;
-        }
-        else
+        Shoot();
+    }
+
+    void Shoot()
+    {
+        if(player != null)
         {
-            TimeBTWShots -= Time.deltaTime;
+            if (TimeBTWShots <= 0)
+            {
+
+                Instantiate(bullet, spawn.transform.position, spawn.transform.rotation);
+                TimeBTWShots = startTimeBTWShots;
+            }
+            else
+            {
+                TimeBTWShots -= Time.deltaTime;
+            }
         }
     }
 

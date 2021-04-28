@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public GameObject hazard;
-    public Vector2 spawnValues;
+   
+    public GameObject[] enemySpawns;
+
+    public Vector2 spawnValue;
     public int hazardCount;
     public float spawnWait;
     public float startWait;
@@ -20,8 +23,21 @@ public class GameController : MonoBehaviour
 
     private bool gameOver;
     private bool restart;
-
+    private bool easyCars = true;
+    private float[] spawnValues = { -2.5f, 1.9f, 2.5f };
     private int score;
+    private int easyCarKilled =0;
+    private int hardCarKilled = 0;
+
+    public void SetCarKilled(int count)
+    {
+        easyCarKilled += count;
+    }
+
+    public void SetHardCarKilled(int count)
+    {
+        hardCarKilled += count;
+    }
 
     private void Start()
     {
@@ -32,6 +48,7 @@ public class GameController : MonoBehaviour
         score = 0;
         updateScore();
         StartCoroutine( spawnWaves());
+        
     }
 
     public void GameOver()
@@ -45,24 +62,74 @@ public class GameController : MonoBehaviour
     IEnumerator spawnWaves()
     {
         yield return new WaitForSeconds(startWait);
+        while (easyCars)
+        {
+            for (int i = 0; i < hazardCount; i++)
+            {
+                Vector2 spawnPosition = new Vector2(Random.Range(-spawnValue.x, spawnValue.x), spawnValue.y);
+                Instantiate(hazard, spawnPosition, Quaternion.identity);
+                yield return new WaitForSeconds(spawnWait);
+                easyCarKilled++;
+            }
+            if (gameOver)
+                break;
+
+            if (easyCarKilled >= 10)
+            {
+                print("End spawn waves");
+                activateHelp();
+                easyCarKilled = 0;
+                easyCars = false;
+                hardCount();
+            }
+            yield return new WaitForSeconds(vaweWait);
+        }
+
+
+
+       
+
+    }
+
+    void hardCount()
+    {
+        print("Start Hard Count");
+        while(hardCarKilled <=10)
+        {
+            hardCarKilled++;
+
+        }
+
+        StartCoroutine(hardSpawnWaves());
+    }
+
+    IEnumerator hardSpawnWaves()
+    {
+        yield return new WaitForSeconds(startWait);
         while (true)
         {
             for (int i = 0; i < hazardCount; i++)
             {
-                Vector2 spawnPosition = new Vector2(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y);
-                
+                float point = spawnValues[Random.Range(0, 2)];
+                Vector2 spawnPosition = new Vector2(Random.Range(point, point*2), spawnValue.y);
                 Instantiate(hazard, spawnPosition, Quaternion.identity);
                 yield return new WaitForSeconds(spawnWait);
-                
+               
             }
-            
-           
             if (gameOver)
                 break;
-            
+
+            if (easyCarKilled >= 10)
+            {
+                activateHelp();
+                easyCarKilled = 0;
+                easyCars = false;
+            }
             yield return new WaitForSeconds(vaweWait);
         }
+
     }
+
 
     private void Update()
     {
@@ -75,6 +142,16 @@ public class GameController : MonoBehaviour
             }
         }
 
+       
+
+    }
+
+    void activateHelp()
+    {
+        for(int i = 0; i<enemySpawns.Length; i++)
+        {
+            enemySpawns[i].SetActive(true);
+        }
     }
 
     public void AddScore(int newScoreValue)
@@ -87,4 +164,6 @@ public class GameController : MonoBehaviour
     {
         scoreText.text = "Score: " + score;
     }
+
+    
 }

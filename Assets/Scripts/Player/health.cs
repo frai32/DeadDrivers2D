@@ -105,10 +105,10 @@ public class health : MonoBehaviour
         D_anim.SetBool("isDead", m_Dead);
 
         Debug.Log(D_anim.GetBool("isDead"));
-    
 
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
         // Play the tank explosion sound effect.
-         m_ExplosionAudio.Play();
+        m_ExplosionAudio.Play();
 
         // Turn the tank off.
         StartCoroutine(playDeathAnimation());

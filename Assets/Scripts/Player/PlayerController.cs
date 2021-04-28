@@ -50,6 +50,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("EBolt"))
+        {
+            Destroy(collision.gameObject);
+            GetComponent<health>().TakeDamage();
+        }
+    }
+
     void moving()
     {
         Vector2 move = new Vector2(moveH, moveV);
@@ -57,8 +66,4 @@ public class PlayerController : MonoBehaviour
         playerRig.velocity = move * speed;
     }
 
-  
-
-
-    
 }

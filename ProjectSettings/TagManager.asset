@@ -9,6 +9,8 @@ TagManager:
   - Bolt
   - Buster
   - EBolt
+  - spawnPoint
+  - SEnemy
   layers:
   - Default
   - TransparentFX
@@ -49,18 +51,18 @@ TagManager:
   - name: Backgound
     uniqueID: 4268273917
     locked: 0
-  - name: Player
-    uniqueID: 2946478683
+  - name: Health
+    uniqueID: 2104231685
     locked: 0
-  - name: Shot
-    uniqueID: 3874572247
+  - name: car
+    uniqueID: 3340148283
     locked: 0
   - name: Enemy
     uniqueID: 3578162133
     locked: 0
-  - name: Health
-    uniqueID: 2104231685
-    locked: 0
   - name: Buster
     uniqueID: 3596241257
+    locked: 0
+  - name: Shot
+    uniqueID: 3874572247
     locked: 0
