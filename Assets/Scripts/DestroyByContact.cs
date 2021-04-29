@@ -62,10 +62,6 @@ public class DestroyByContact : MonoBehaviour
         localControl.AddScore(10);
         
         anim.SetBool("isDead", true);
-        if (localControl.armorText.gameObject.activeSelf)
-        {
-            localControl.armorText.gameObject.SetActive(false);
-        }
         // Play the tank explosion sound effect.
         m_ExplosionAudio.Play();
     }
@@ -73,7 +69,7 @@ public class DestroyByContact : MonoBehaviour
     IEnumerator playDeath()
     {
         yield return new WaitForSeconds(0.3f);
-        
+    
         Destroy(gameObject);       
     }
 

@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     private bool gameOver;
     private bool restart;
     private bool easyCars = true;
-    private float[] spawnValues = { -2.5f, 1.9f, 2.5f };
+    private float[] spawnValues = { -3.2f, 3.2f };
     private int score;
     private int easyCarKilled =0;
     private int hardCarKilled = 0;
@@ -79,16 +79,12 @@ public class GameController : MonoBehaviour
                 print("End spawn waves");
                 activateHelp();
                 easyCarKilled = 0;
-                easyCars = false;
                 hardCount();
+                easyCars = false;
+                
             }
             yield return new WaitForSeconds(vaweWait);
         }
-
-
-
-       
-
     }
 
     void hardCount()
@@ -99,7 +95,7 @@ public class GameController : MonoBehaviour
             hardCarKilled++;
 
         }
-
+        print("end hard count loop");
         StartCoroutine(hardSpawnWaves());
     }
 
@@ -111,7 +107,7 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < hazardCount; i++)
             {
                 float point = spawnValues[Random.Range(0, 2)];
-                Vector2 spawnPosition = new Vector2(Random.Range(point, point*2), spawnValue.y);
+                Vector2 spawnPosition = new Vector2(Random.Range(point, point*1.5f), spawnValue.y);
                 Instantiate(hazard, spawnPosition, Quaternion.identity);
                 yield return new WaitForSeconds(spawnWait);
                
@@ -119,12 +115,6 @@ public class GameController : MonoBehaviour
             if (gameOver)
                 break;
 
-            if (easyCarKilled >= 10)
-            {
-                activateHelp();
-                easyCarKilled = 0;
-                easyCars = false;
-            }
             yield return new WaitForSeconds(vaweWait);
         }
 

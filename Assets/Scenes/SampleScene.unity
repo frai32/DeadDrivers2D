@@ -392,10 +392,10 @@ GameObject:
   m_Layer: 0
   m_Name: StartSpawnPoint (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &285978631
 Transform:
   m_ObjectHideFlags: 0
@@ -770,7 +770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &890316870
 Transform:
   m_ObjectHideFlags: 0
@@ -800,7 +800,7 @@ GameObject:
   m_Layer: 0
   m_Name: EndSpawnPoint
   m_TagString: spawnPoint
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1560,12 +1560,12 @@ PrefabInstance:
     - target: {fileID: 297468609783892577, guid: 57cd3bfabc5da924886b74246c8914ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.5
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 297468609783892577, guid: 57cd3bfabc5da924886b74246c8914ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5
+      value: -4.22
       objectReference: {fileID: 0}
     - target: {fileID: 297468609783892577, guid: 57cd3bfabc5da924886b74246c8914ba,
         type: 3}

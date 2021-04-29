@@ -58,8 +58,15 @@ public class health : MonoBehaviour
 
     public void TakeDamage(float amount = 10)
     {
-        if (!armored)
+        if (armored)
         {
+            armored = false;
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().armorText.gameObject.SetActive(armored);
+        }
+        else
+        {
+            
+           
             // Reduce current health by the amount of damage done.
             m_CurrentHealth -= amount;
 
@@ -72,14 +79,13 @@ public class health : MonoBehaviour
                 OnDeath();
             }
         }
-        else
-            armored = false;
     }
 
     public void healDamage(float amount = 10)
     {
         m_CurrentHealth += amount;
-
+        if (m_CurrentHealth > 100)
+            m_CurrentHealth = 100;
         SetHealthUI();
     }
 

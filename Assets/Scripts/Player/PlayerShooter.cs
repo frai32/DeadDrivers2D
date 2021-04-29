@@ -45,8 +45,8 @@ public class PlayerShooter : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && Time.time > nextFire )
         {
             nextFire = Time.time + fireRate;
-            Instantiate(bolt, new Vector3(shotSpawn.transform.position.x - 0.5f, shotSpawn.transform.position.y - 0.5f, 0), shotSpawn.transform.rotation);
-            Instantiate(bolt, new Vector3(shotSpawn.transform.position.x + 0.5f, shotSpawn.transform.position.y + 0.5f, 0), shotSpawn.transform.rotation);
+            Instantiate(bolt, new Vector3(shotSpawn.transform.position.x - 0.2f, shotSpawn.transform.position.y , 0), shotSpawn.transform.rotation);
+            Instantiate(bolt, new Vector3(shotSpawn.transform.position.x + 0.2f, shotSpawn.transform.position.y , 0), shotSpawn.transform.rotation);
 
             count--;
         }

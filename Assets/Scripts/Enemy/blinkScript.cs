@@ -82,9 +82,8 @@ public class blinkScript : MonoBehaviour
         anim.SetBool("isDead", true);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         Repeat();
+
         
-        Destroy(gameObject, .5f);
-        
-        
+        Destroy(gameObject, .5f);   
     }
 }

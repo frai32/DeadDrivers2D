@@ -5,6 +5,7 @@ using UnityEngine;
 public class spawnBuster : MonoBehaviour
 {
     public GameObject[] busters;
+    public int healthOfObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,13 +15,25 @@ public class spawnBuster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+            
     }
 
-    private void OnDestroy()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Work!");
-        SpawnBuster();
+        if (collision.CompareTag("Baundary"))
+            return;
+         
+        if (collision.CompareTag("Player"))
+            healthOfObject -= healthOfObject;
+        else if(collision.CompareTag("Bolt"))
+            healthOfObject--;
+        
+
+        if (healthOfObject<=0)
+            SpawnBuster();
+
+
     }
 
     void SpawnBuster()
@@ -32,4 +45,6 @@ public class spawnBuster : MonoBehaviour
             Instantiate(busters[Random.Range(0, busters.Length)], transform.position, transform.rotation);
         }
     }
+
+   
 }

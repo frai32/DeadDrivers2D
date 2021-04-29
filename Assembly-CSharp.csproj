@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\bustrers\doubleShots.cs" />
     <Compile Include="Assets\Scripts\bustrers\healPlayer.cs" />
     <Compile Include="Assets\Scripts\bustrers\setArmor.cs" />
+    <Compile Include="Assets\Scripts\bustrers\spawnBuster.cs" />
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\Enemy\blinkScript.cs" />
@@ -76,8 +77,6 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShooter.cs" />
     <Compile Include="Assets\Scripts\Player\UiDirectionControl.cs" />
-    <Compile Include="Assets\Scripts\spawnBester.cs" />
-    <Compile Include="Assets\Scripts\spawnBuster.cs" />
     <Compile Include="Assets\Scripts\Ui\blinkText.cs" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>D:/чето/2DDeadraiders/DeadDrivers2D/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>

@@ -16,8 +16,8 @@ public class setArmor : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             m_ExplosionAudio.Play();
-           collision.GetComponent<health>().setArmor(true);
-            GameObject.FindGameObjectWithTag("GameController").gameObject.GetComponent<GameController>().armorText.gameObject.SetActive(true);
+            collision.GetComponent<health>().setArmor(true);
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().armorText.gameObject.SetActive(true);
 
             Destroy(gameObject, 0.1f);
         }

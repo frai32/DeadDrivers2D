@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 1363532214055432457}
   - component: {fileID: 1363532214055432458}
   - component: {fileID: 1363532214055432454}
+  - component: {fileID: 7622158677138055239}
   - component: {fileID: 1363532214055432459}
   - component: {fileID: 114395847543133730}
   - component: {fileID: 8783127067202470166}
-  - component: {fileID: 114509934834026558}
   m_Layer: 0
   m_Name: enemy01
   m_TagString: SEnemy
@@ -230,6 +230,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7622158677138055239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363532214055432460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5707223ae0b894b9025ba19969bb4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busters:
+  - {fileID: 604598622021778901, guid: a0523f4df7902ea43b92130e5c4d49bd, type: 3}
+  - {fileID: 8335096841722577723, guid: 61cd76849ca4349449ec1c12f0771ff6, type: 3}
+  - {fileID: 8810493463734127974, guid: d242f7aa985d3c14a9ca2650d895612c, type: 3}
+  healthOfObject: 4
 --- !u!114 &1363532214055432459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,22 +292,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114509934834026558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363532214055432460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f5707223ae0b894b9025ba19969bb4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  busters:
-  - {fileID: 604598622021778901, guid: a0523f4df7902ea43b92130e5c4d49bd, type: 3}
-  - {fileID: 8335096841722577723, guid: 61cd76849ca4349449ec1c12f0771ff6, type: 3}
-  - {fileID: 8810493463734127974, guid: d242f7aa985d3c14a9ca2650d895612c, type: 3}
 --- !u!1 &1363532215299721754
 GameObject:
   m_ObjectHideFlags: 0

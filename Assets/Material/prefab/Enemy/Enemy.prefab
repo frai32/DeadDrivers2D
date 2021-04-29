@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4390785015808476302}
   - component: {fileID: 114074198734256092}
   - component: {fileID: 4390785015808476290}
-  - component: {fileID: 114848994643990810}
+  - component: {fileID: 114463228312217426}
   - component: {fileID: 2324934346361261911}
   - component: {fileID: 82218331013324826}
   m_Layer: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 10
---- !u!114 &114848994643990810
+--- !u!114 &114463228312217426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,6 +165,7 @@ MonoBehaviour:
   - {fileID: 604598622021778901, guid: a0523f4df7902ea43b92130e5c4d49bd, type: 3}
   - {fileID: 8335096841722577723, guid: 61cd76849ca4349449ec1c12f0771ff6, type: 3}
   - {fileID: 8810493463734127974, guid: d242f7aa985d3c14a9ca2650d895612c, type: 3}
+  healthOfObject: 1
 --- !u!95 &2324934346361261911
 Animator:
   serializedVersion: 3

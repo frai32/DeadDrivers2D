@@ -7,15 +7,21 @@ public class blinkText : MonoBehaviour
 {
     Text blinkingText;
     bool isActive = true;
-    string textOfString;
+    string textOfString = "ARMOR";
 
+    private void OnEnable()
+    {
+
+
+        StartCoroutine(blinking());
+    }
 
     private void Awake()
     {
         blinkingText = GetComponent<Text>();
         textOfString = blinkingText.text;
-      
-        StartCoroutine(blinking());
+
+
     }
     // Start is called before the first frame update
     void Start()
@@ -48,5 +54,11 @@ public class blinkText : MonoBehaviour
             isActive = true;
         }
         StartCoroutine(blinking());
+    }
+
+    private void OnDisable()
+    {
+        isActive = false;
+        StopCoroutine(blinking());
     }
 }
