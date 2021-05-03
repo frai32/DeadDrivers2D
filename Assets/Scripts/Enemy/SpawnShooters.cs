@@ -6,7 +6,7 @@ public class SpawnShooters : MonoBehaviour
 {
     public Transform targetToStart;
     public GameObject spawnObject;
-    public int spawnCount;
+    
   
 
     public float spawnWait;

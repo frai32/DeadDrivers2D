@@ -423,8 +423,8 @@ GameObject:
   - component: {fileID: 297468609783892591}
   - component: {fileID: 297468609783892590}
   - component: {fileID: 297468609783892589}
-  - component: {fileID: 297468609783892588}
-  - component: {fileID: 1600547948}
+  - component: {fileID: 7784485994880789183}
+  - component: {fileID: 614877282171271634}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -483,7 +483,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -954819013
-  m_SortingLayer: 7
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fde711621b86fc34eb80807dddf07a35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -563,7 +563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  tilt: 0
+  tilt: 1
+  playerNumber: 1
   boundary:
     xMin: -5.5
     xMax: 5.5
@@ -584,7 +585,8 @@ MonoBehaviour:
   bolt: {fileID: 5906587402615549908, guid: 8376e181ddc21704babca69ccf21e0f4, type: 3}
   shotSpawn: {fileID: 297468609509182345}
   fireRate: 0.2
---- !u!95 &297468609783892588
+  PlayerNumber: 1
+--- !u!95 &7784485994880789183
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -603,7 +605,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &1600547948
+--- !u!82 &614877282171271634
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

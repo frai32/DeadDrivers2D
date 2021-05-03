@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float tilt;
+    public int playerNumber;
     
     public Boundary boundary;
     
@@ -37,8 +38,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-         moveH = Input.GetAxis("Horizontal");
-         moveV = Input.GetAxis("Vertical");
+         moveH = Input.GetAxis("Horizontal"+ playerNumber);
+         moveV = Input.GetAxis("Vertical"+ playerNumber);
 
         moving();
         
@@ -56,6 +57,18 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             GetComponent<health>().TakeDamage();
+        }
+
+        if (collision.CompareTag("MainBolt"))
+        {
+            Destroy(collision.gameObject);
+            GetComponent<health>().TakeDamage(30);
+        }
+
+        if (collision.CompareTag("Boss"))
+        {
+            
+            GetComponent<health>().TakeDamage(100);
         }
     }
 

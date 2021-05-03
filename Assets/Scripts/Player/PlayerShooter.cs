@@ -10,6 +10,7 @@ public class PlayerShooter : MonoBehaviour
     float nextFire;
     bool haveDoubleShots = false;
     int count = 50;
+    public int PlayerNumber;
 
     public void setHaveBuster (bool HB)
     {
@@ -32,7 +33,7 @@ public class PlayerShooter : MonoBehaviour
 
     void shoting()
     {
-        if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
+        if (Input.GetButton("Fire" + PlayerNumber) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Instantiate(bolt, shotSpawn.transform.position, shotSpawn.transform.rotation);
@@ -42,8 +43,9 @@ public class PlayerShooter : MonoBehaviour
 
     void doubleShooting()
     {
-        if (Input.GetKey(KeyCode.Space) && Time.time > nextFire )
-        {
+        if (Input.GetButton("Fire"+ PlayerNumber) && Time.time > nextFire )
+        { 
+            
             nextFire = Time.time + fireRate;
             Instantiate(bolt, new Vector3(shotSpawn.transform.position.x - 0.2f, shotSpawn.transform.position.y , 0), shotSpawn.transform.rotation);
             Instantiate(bolt, new Vector3(shotSpawn.transform.position.x + 0.2f, shotSpawn.transform.position.y , 0), shotSpawn.transform.rotation);

@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyShooter : MonoBehaviour
 {
     public float speed;
-    public Transform player;
+     Transform player;
+    public GameObject[] players;
     public GameObject bullet;
     public GameObject spawn;
 
@@ -18,7 +19,11 @@ public class EnemyShooter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if(GameObject.FindGameObjectsWithTag("Player") != null)
+        players = GameObject.FindGameObjectsWithTag("Player");
+        int choose = Random.Range(0, players.Length);
+        if(players != null)
+        player = players[choose].transform;
         TimeBTWShots = startTimeBTWShots;
         rig = GetComponent<Rigidbody2D>();
        
@@ -51,9 +56,18 @@ public class EnemyShooter : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 dirTur = (Vector2)player.position - rig.position;
+        makeShot();
+    }
+
+    private void makeShot()
+    {
+        if (player != null)
+        {
+            Vector2 dirTur = (Vector2)player.position - rig.position;
         dirTur.Normalize();
         float rotateAmount = Vector3.Cross(dirTur, transform.up).z;
         rig.angularVelocity = -rotateAmount * rotateSpeed;
+        }
     }
+
 }

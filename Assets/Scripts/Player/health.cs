@@ -31,7 +31,7 @@ public class health : MonoBehaviour
 
     private void Awake()
     {
-        D_anim = GetComponentInChildren<Animator>();
+        D_anim = GetComponent<Animator>();
         // Get a reference to the audio source on the instantiated prefab.
           m_ExplosionAudio = GetComponent<AudioSource>();
 
@@ -106,8 +106,8 @@ public class health : MonoBehaviour
         GetComponent<PlayerController>().speed = 0;
 
         m_Dead = true;
-        Debug.Log(m_Dead);
-        m_Slider.gameObject.SetActive(false);
+        Debug.Log("Player"+m_Dead);
+        //m_Slider.gameObject.SetActive(false);
         D_anim.SetBool("isDead", m_Dead);
 
         Debug.Log(D_anim.GetBool("isDead"));
@@ -117,12 +117,9 @@ public class health : MonoBehaviour
         m_ExplosionAudio.Play();
 
         // Turn the tank off.
-        StartCoroutine(playDeathAnimation());
+         Destroy(gameObject, 0.5f);
+       
     }
 
-    IEnumerator playDeathAnimation()
-    {
-        yield return new WaitForSeconds(0.5f);
-        gameObject.SetActive(false);
-    }
+  
 }

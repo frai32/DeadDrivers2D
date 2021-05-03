@@ -1,9 +1,10 @@
 Win64
 PlayerPath?
-D:/чето/2DDeadraiders/build/DeadDrivers2D.exe
+H:/Build/DeadDrivers2D.exe
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/MainLevel.unity
+Assets/Scenes/EndScene.unity
 SceneListEnd?
 3c08375166df118bd1801438fc36b92f Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.enemyMover
@@ -119,7 +120,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 13f8f373b951cbaf0f891949929b196a Assembly-CSharp.dll:.mover
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-d3faf5664e9c28ea45fee989e937c589 Assembly-CSharp.dll:.SpawnShooters
+7a46ad527f99c149bf21ddb6e0ab7c5b Assembly-CSharp.dll:.SpawnShooters
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.doubleShots
 b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 d4777fd2ce44d1e2e83e35f2ab3c7e15 Assembly-CSharp.dll:.DestroyByContact
@@ -127,9 +128,10 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 8b299b8cba62bb14069426bd4f6ede3b Assembly-CSharp.dll:.health
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.healPlayer
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
-08a3f728ab4fa77337c5af436e7f9c81 Assembly-CSharp.dll:.EnemyShooter
+a50537386a37c61d50d765f2767beeee Assembly-CSharp.dll:.EnemyShooter
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
-7b4443749913b28b6252d6344ca80d41 Assembly-CSharp.dll:.GameController
+77369296e708222261e216ba674e070d Assembly-CSharp.dll:.GameController
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.EndGame
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -163,13 +165,14 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 3b760e6526e13f7504f59e210145899a Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 507174d46dacbc5fe45e28485db5dd1e Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-b2da6ad979727e203a3aac74faff6c3f Assembly-CSharp.dll:.PlayerController
-2ce346e1190a040fde53c0666471ee79 Assembly-CSharp.dll:.PlayerShooter
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MainMenuScript
+28c8556f06c0f196f4b3e5ac5d9d6967 Assembly-CSharp.dll:.PlayerController
+83e902f130208c19a0bf8e624755bc0f Assembly-CSharp.dll:.PlayerShooter
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.setArmor
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DestroyByBoundary
 df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
+ad29f61fd25a93e2c859234f54650499 Assembly-CSharp.dll:.GameMenu
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 de60ef3c468970291efcb331396e9eeb Assembly-CSharp.dll:.UiDirectionControl
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MainMenuScript

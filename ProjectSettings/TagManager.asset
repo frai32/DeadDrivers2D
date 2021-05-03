@@ -11,6 +11,8 @@ TagManager:
   - EBolt
   - spawnPoint
   - SEnemy
+  - Boss
+  - MainBolt
   layers:
   - Default
   - TransparentFX
@@ -62,6 +64,9 @@ TagManager:
     locked: 0
   - name: Buster
     uniqueID: 3596241257
+    locked: 0
+  - name: MainWeapon
+    uniqueID: 3582984713
     locked: 0
   - name: Shot
     uniqueID: 3874572247

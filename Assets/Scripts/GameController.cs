@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     public GameObject hazard;
+    public GameObject Player1;
+    public GameObject Player2;
    
     public GameObject[] enemySpawns;
+    public GameObject BossSpawn;
 
     public Vector2 spawnValue;
     public int hazardCount;
+    public int kilLimit;
     public float spawnWait;
     public float startWait;
     public float vaweWait;
@@ -21,6 +26,7 @@ public class GameController : MonoBehaviour
     public Text armorText;
     public Text doubleText;
 
+    private int player;
     private bool gameOver;
     private bool restart;
     private bool easyCars = true;
@@ -39,6 +45,20 @@ public class GameController : MonoBehaviour
         hardCarKilled += count;
     }
 
+    private void Awake()
+    {
+        player = PlayerSelect.playerNumber;
+        if(player == 1)
+        {
+            Player1.SetActive(true);
+        }
+        else if(player == 2)
+        {
+            Player1.SetActive(true);
+            Player2.SetActive(true);
+        }
+    }
+
     private void Start()
     {
         gameOver = false;
@@ -53,10 +73,14 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.text = "Game Over!";
+        gameOverText.gameObject.SetActive(true);
         RestartText.gameObject.SetActive(true);
         restart = true;
         gameOver = true;
+
+
+        Player1.GetComponent<PlayerController>().speed = 0;
+        Player2.GetComponent<PlayerController>().speed = 0;
     }
 
     IEnumerator spawnWaves()
@@ -74,7 +98,7 @@ public class GameController : MonoBehaviour
             if (gameOver)
                 break;
 
-            if (easyCarKilled >= 10)
+            if (easyCarKilled >= kilLimit)
             {
                 print("End spawn waves");
                 activateHelp();
@@ -90,11 +114,7 @@ public class GameController : MonoBehaviour
     void hardCount()
     {
         print("Start Hard Count");
-        while(hardCarKilled <=10)
-        {
-            hardCarKilled++;
-
-        }
+        
         print("end hard count loop");
         StartCoroutine(hardSpawnWaves());
     }
@@ -110,14 +130,30 @@ public class GameController : MonoBehaviour
                 Vector2 spawnPosition = new Vector2(Random.Range(point, point*1.5f), spawnValue.y);
                 Instantiate(hazard, spawnPosition, Quaternion.identity);
                 yield return new WaitForSeconds(spawnWait);
+                hardCarKilled++;
                
             }
             if (gameOver)
                 break;
-
+            if(hardCarKilled >= 50)
+            {
+                ActivateBoss();
+                yield return new WaitForSeconds(vaweWait);
+                BossSpawn.SetActive(false);
+            }
             yield return new WaitForSeconds(vaweWait);
         }
 
+    }
+
+    void ActivateBoss()
+    {
+        for (int i = 0; i < enemySpawns.Length; i++)
+        {
+            enemySpawns[i].SetActive(false);
+        }
+
+        BossSpawn.SetActive(true);
     }
 
 
@@ -127,8 +163,8 @@ public class GameController : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.R))
             {
-                
-                Application.LoadLevel(Application.loadedLevel);
+
+                SceneManager.LoadScene(1);
             }
         }
 
