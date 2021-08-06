@@ -78,7 +78,7 @@ public class blinkScript : MonoBehaviour
 
     void KillEnemy()
     {
-       GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddScore(50);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddScore(50);
         anim.SetBool("isDead", true);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         Repeat();

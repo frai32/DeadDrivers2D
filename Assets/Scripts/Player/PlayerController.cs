@@ -17,17 +17,19 @@ public class PlayerController : MonoBehaviour
     public Boundary boundary;
     
 
-    float moveV;
-    float moveH;
+    private float moveV;
+    private float moveH;
     
-    Rigidbody2D playerRig;
-    
-    
+    private Rigidbody2D playerRig;
+
+  
     
     // Start is called before the first frame update
     void Start()
     {
         playerRig = GetComponent<Rigidbody2D>();
+
+        
     }
 
     private void Update()
@@ -53,19 +55,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("EBolt"))
+        Tags tag = new Tags();
+        if(collision.CompareTag(tag.getEnemyBoltTag))
         {
             Destroy(collision.gameObject);
             GetComponent<health>().TakeDamage();
         }
 
-        if (collision.CompareTag("MainBolt"))
+        if (collision.CompareTag(tag.getMainBoltTag))
         {
             Destroy(collision.gameObject);
             GetComponent<health>().TakeDamage(30);
         }
 
-        if (collision.CompareTag("Boss"))
+        if (collision.CompareTag(tag.getBossTag))
         {
             
             GetComponent<health>().TakeDamage(100);

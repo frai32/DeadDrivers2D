@@ -18,6 +18,8 @@ public class DestroyByContact : MonoBehaviour
 
         m_ExplosionAudio = GetComponent<AudioSource>();
     }
+
+
     private void Start()
     {
         GameObject gameControll = GameObject.FindGameObjectWithTag("GameController");
@@ -58,11 +60,11 @@ public class DestroyByContact : MonoBehaviour
     private void OnDeath()
     {
         GetComponent<CapsuleCollider2D>().enabled = false;
-        // Set the flag so that this function is only called once.
+        
         localControl.AddScore(10);
         
         anim.SetBool("isDead", true);
-        // Play the tank explosion sound effect.
+        
         m_ExplosionAudio.Play();
     }
 

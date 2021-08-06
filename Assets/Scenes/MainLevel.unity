@@ -1976,7 +1976,7 @@ MonoBehaviour:
   BossSpawn: {fileID: 583599567}
   spawnValue: {x: 5.5, y: 5.5}
   hazardCount: 10
-  kilLimit: 50
+  kilLimit: 4
   spawnWait: 1
   startWait: 2
   vaweWait: 3
