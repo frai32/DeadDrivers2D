@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class health : MonoBehaviour
 {
-    public float m_StartingHealth = 100f;               // The amount of health each tank starts with.
-    public Slider m_Slider;                             // The slider to represent how much health the tank currently has.
-    public Image m_FillImage;                           // The image component of the slider.
-    public Color m_FullHealthColor = Color.green;       // The color the health bar will be when on full health.
-    public Color m_ZeroHealthColor = Color.red;         // The color the health bar will be when on no health.
+    public float m_StartingHealth = 100f;               // 
+    public Slider m_Slider;                             // 
+    public Image m_FillImage;                           // 
+    public Color m_FullHealthColor = Color.green;       // 
+    public Color m_ZeroHealthColor = Color.red;         // 
 
-    private AudioSource m_ExplosionAudio;               // The audio source to play when the tank explodes.
+    private AudioSource m_ExplosionAudio;               // 
   
-    private float m_CurrentHealth;                      // How much health the tank currently has.
-    private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
+    private float m_CurrentHealth;                      // 
+    private bool m_Dead;                                // 
     private Animator D_anim;
     private bool armored;
+    private Tags t;
 
     public void setArmor(bool armor)
     {
@@ -32,26 +33,23 @@ public class health : MonoBehaviour
     private void Awake()
     {
         D_anim = GetComponent<Animator>();
-        // Get a reference to the audio source on the instantiated prefab.
-          m_ExplosionAudio = GetComponent<AudioSource>();
+        // 
+        m_ExplosionAudio = GetComponent<AudioSource>();
 
-        // Disable the prefab so it can be activated when it's required.
-        //m_ExplosionParticles.gameObject.SetActive(false);
     }
 
     private void Start()
     {
-        
+        t = new Tags();
     }
 
 
     private void OnEnable()
     {
-        // When the tank is enabled, reset the tank's health and whether or not it's dead.
+        // 
         m_CurrentHealth = m_StartingHealth;
         m_Dead = false;
-
-        // Update the health slider's value and color.
+        // 
         SetHealthUI();
     }
 
@@ -61,19 +59,17 @@ public class health : MonoBehaviour
         if (armored)
         {
             armored = false;
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().armorText.gameObject.SetActive(armored);
+            GameObject.FindGameObjectWithTag(t.getTagList[(int)ETags.GAME_CONTROLLER_TAG]).GetComponent<GameController>().armorText.gameObject.SetActive(armored);
         }
         else
         {
-            
-           
-            // Reduce current health by the amount of damage done.
+            // 
             m_CurrentHealth -= amount;
 
-            // Change the UI elements appropriately.
+            // 
             SetHealthUI();
 
-            // If the current health is at or below zero and it has not yet been registered, call OnDeath.
+            //
             if (m_CurrentHealth <= 0f && !m_Dead)
             {
                 OnDeath();
@@ -92,7 +88,7 @@ public class health : MonoBehaviour
 
     private void SetHealthUI()
     {
-        // Set the slider's value appropriately.
+        //
         m_Slider.value = m_CurrentHealth;
 
         // Interpolate the color of the bar between the choosen colours based on the current percentage of the starting health.
@@ -102,22 +98,19 @@ public class health : MonoBehaviour
 
     private void OnDeath()
     {
-        // Set the flag so that this function is only called once.
+        // 
         GetComponent<PlayerController>().speed = 0;
 
         m_Dead = true;
         Debug.Log("Player"+m_Dead);
-        //m_Slider.gameObject.SetActive(false);
+        
         D_anim.SetBool("isDead", m_Dead);
 
         Debug.Log(D_anim.GetBool("isDead"));
-
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
-        // Play the tank explosion sound effect.
+        GameObject.FindGameObjectWithTag(t.getTagList[(int)ETags.GAME_CONTROLLER_TAG]).GetComponent<GameController>().GameOver();
+       
         m_ExplosionAudio.Play();
-
-        // Turn the tank off.
-         Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0.5f);
        
     }
 

@@ -5,8 +5,10 @@ using UnityEngine;
 public class enemyMover : MonoBehaviour
 {
     public float speed;
+    
     private Transform point;
-    Vector3 target;
+    private Vector3 target;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +27,6 @@ public class enemyMover : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-        /*if (transform.position.x == target.x && transform.position.y == target.y)
-        {
-            
-        }*/
-        // transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
     }
 
     

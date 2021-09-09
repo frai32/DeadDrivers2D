@@ -6,10 +6,11 @@ public class spawnBuster : MonoBehaviour
 {
     public GameObject[] busters;
     public int healthOfObject;
+    private Tags t;
     // Start is called before the first frame update
     void Start()
     {
-        
+        t = new Tags();
     }
 
     // Update is called once per frame
@@ -21,12 +22,12 @@ public class spawnBuster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Baundary"))
+        if (collision.CompareTag(t.getTagList[(int)ETags.BAUNDARY_TAG]))
             return;
          
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(t.getTagList[(int)ETags.PLAYER_TAG]))
             healthOfObject -= healthOfObject;
-        else if(collision.CompareTag("Bolt"))
+        else if(collision.CompareTag(t.getTagList[(int)ETags.BOLT_TAG]))
             healthOfObject--;
         
 

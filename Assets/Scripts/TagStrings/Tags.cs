@@ -2,104 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ETags : short
+{  
+    PLAYER_TAG,
+    BOSS_TAG,
+    ENEMY_BOLT_TAG,
+    MAIN_BOLT_TAG,
+    BAUNDARY_TAG,
+    DAMAGE_TAG,
+    BOLT_TAG,
+    BUSTER_TAG,
+    SPAWN_POINT_TAG,
+    SENAMY_TAG,
+    GAME_CONTROLLER_TAG
+}
+
 public class Tags
 {
-    const string playerTag = "Player";
-    public string getPlayerTag
+    List<string> TagList = new List<string>()
     {
-            get
-            {
-                return playerTag;
-            }
-    }
+        "Player",       //PLAYER_TAG
+        "Boss",         //BOSS_TAG
+        "EBolt",        //ENEMY_BOLT_TAG
+        "MainBolt",     //MAIN_BOLT_TAG
+        "Baundary",     //BAUNDARY_TAG
+        "Damage",       //DAMAGE_TAG
+        "Bolt",         //BOLT_TAG
+        "Buster",       //BUSTER_TAG
+        "spawnPoint",   //SPAWN_POINT_TAG
+        "SEnemy",       //SENAMY_TAG
+        "GameController"//GAME_CONTROLLER_TAG
+    };
 
-    const string bossTag = "Boss";
-    public string getBossTag
-    {
-        get
-        {
-            return bossTag;
-        }
-    }
-    
-    const string enemyBoltTag = "EBolt";
-    public string getEnemyBoltTag
-    {
-        get
-        {
-            return enemyBoltTag;
-        }
-    }
-    
-    const string mainBoltTag = "MainBolt";
-    public string getMainBoltTag
-    {
-        get
-        {
-            return mainBoltTag;
-        }
-    }
-
-    const string baundaryTag = "Baundary";
-    public string getBaundaryTag
-    {
-        get
-        {
-            return baundaryTag;
-        }
-    }
-
-    const string damageTag = "Damage";
-    public string getDamageTag
-    {
-        get
-        {
-            return damageTag;
-        }
-    }
-
-    const string boltTag = "Bolt";
-    public string getBoltTag
-    {
-        get
-        {
-            return boltTag;
-        }
-    }
-
-    const string busterTag = "Buster";
-    public string getBusterTag
-    {
-        get
-        {
-            return busterTag;
-        }
-    }
-
-    const string spawnPointTag = "spawnPoint";
-    public string getSpawnPointTag
-    {
-        get
-        {
-            return spawnPointTag;
-        }
-    }
-
-    const string sEnemyTag = "SEnemy";
-    public string getSEnemyTag
-    {
-        get
-        {
-            return sEnemyTag;
-        }
-    }
-
-    const string gameControllerTag = "GameController";
-    public string getGameControllerTag
-    {
-        get
-        {
-            return gameControllerTag;
-        }
-    }
 }

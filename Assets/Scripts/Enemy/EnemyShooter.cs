@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class EnemyShooter : MonoBehaviour
 {
-    public float speed;
-     Transform player;
+    
+     
     public GameObject[] players;
     public GameObject bullet;
     public GameObject spawn;
-
-    private float TimeBTWShots;
     public float startTimeBTWShots;
-    Rigidbody2D rig;
-    float rotateSpeed = 200;
+    public float speed;
 
+    private Transform player;
+    private Rigidbody2D rig;
+    private float TimeBTWShots;
+    private float rotateSpeed = 200;
+    private Tags t;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(GameObject.FindGameObjectsWithTag("Player") != null)
-        players = GameObject.FindGameObjectsWithTag("Player");
+        t = new Tags();
+        
+        if(GameObject.FindGameObjectsWithTag(t.getTagList[(int)ETags.PLAYER_TAG]) != null)
+            players = GameObject.FindGameObjectsWithTag(t.getTagList[(int)ETags.PLAYER_TAG]);
+        
         int choose = Random.Range(0, players.Length);
         if(players != null)
-        player = players[choose].transform;
+            player = players[choose].transform;
         TimeBTWShots = startTimeBTWShots;
         rig = GetComponent<Rigidbody2D>();
        

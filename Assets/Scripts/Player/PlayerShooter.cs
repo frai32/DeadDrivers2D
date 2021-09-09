@@ -7,19 +7,23 @@ public class PlayerShooter : MonoBehaviour
     public GameObject bolt;
     public GameObject shotSpawn;
     public float fireRate;
+    public int PlayerNumber;
+
     float nextFire;
     bool haveDoubleShots = false;
     int count = 50;
-    public int PlayerNumber;
-
+    Tags t; 
+   
     public void setHaveBuster (bool HB)
     {
         haveDoubleShots = HB;
     }
+    
     // Start is called before the first frame update
+    
     void Start()
     {
-        
+        t = new Tags();  
     }
 
     // Update is called once per frame
@@ -57,7 +61,8 @@ public class PlayerShooter : MonoBehaviour
         {
             count = 50;
             haveDoubleShots = false;
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().doubleText.gameObject.SetActive(false);
+
+            GameObject.FindGameObjectWithTag(t.getTagList[(int)ETags.GAME_CONTROLLER_TAG]).GetComponent<GameController>().doubleText.gameObject.SetActive(false);
         }
     }
 }

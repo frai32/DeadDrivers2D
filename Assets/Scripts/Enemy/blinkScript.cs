@@ -11,6 +11,7 @@ public class blinkScript : MonoBehaviour
     private SpriteRenderer sprRend;
     private SpawnShooters parent;
     private Animator anim;
+    private Tags t;
 
     public void setParent(SpawnShooters Parent)
     {
@@ -20,6 +21,7 @@ public class blinkScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        t = new Tags();
         anim = GetComponent<Animator>();
         m_ExplosionAudio = GetComponent<AudioSource>();
         sprRend = GetComponent<SpriteRenderer>();
@@ -36,13 +38,14 @@ public class blinkScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Bolt"))
+        //if(collision.CompareTag("Bolt"))
+        if (collision.CompareTag(t.getTagList[(int)ETags.BOLT_TAG]))
         {
             Destroy(collision.gameObject);
             makeBlink();
         }
 
-        if (collision.CompareTag("Player") && !gameObject.CompareTag("Boss"))
+        if (collision.CompareTag(t.getTagList[(int)ETags.PLAYER_TAG]) && !gameObject.CompareTag(t.getTagList[(int)ETags.BOSS_TAG]))
         {
             collision.GetComponent<health>().TakeDamage(50);
             KillEnemy();
@@ -78,7 +81,7 @@ public class blinkScript : MonoBehaviour
 
     void KillEnemy()
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddScore(50);
+        GameObject.FindGameObjectWithTag(t.getTagList[(int)ETags.GAME_CONTROLLER_TAG]).GetComponent<GameController>().AddScore(50);
         anim.SetBool("isDead", true);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         Repeat();
