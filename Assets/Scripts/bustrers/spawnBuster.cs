@@ -8,6 +8,7 @@ public class spawnBuster : MonoBehaviour
     public int healthOfObject;
     private Tags t;
     // Start is called before the first frame update
+   
     void Start()
     {
         t = new Tags();

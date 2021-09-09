@@ -34,4 +34,11 @@ public class Tags
         "GameController"//GAME_CONTROLLER_TAG
     };
 
+    public List<string> getTagList
+    {
+        get
+        {
+            return TagList;
+        }
+    }
 }
